@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Georgia Access Points — Find care you can afford</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--ink:#17202A;--ink2:#4B5563;--mut:#8A94A3;--line:#E3E7EC;--bg:#F6F7F4;--card:#fff;--green:#1F6F4A;--green2:#E6F2EB;--peach:#B8541B;--peach2:#FBEEE6;--blue:#1E4F8C;--blue2:#E7EEF8;--r:14px}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Source Sans 3","Segoe UI",system-ui,sans-serif}
+a{color:var(--blue)}button{font:inherit;cursor:pointer}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+.top{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.01em}
+.brand .pin{width:28px;height:28px;border-radius:50% 50% 50% 0;background:var(--green);transform:rotate(-45deg);display:inline-block;position:relative}
+.brand .pin::after{content:"";position:absolute;inset:8px;background:#fff;border-radius:50%}
+.brand small{display:block;font-weight:400;color:var(--mut);font-size:12px;letter-spacing:0}
+.tabs{display:flex;gap:4px}.tabs button{border:0;background:transparent;padding:8px 12px;border-radius:999px;color:var(--ink2)}
+.tabs button.on{background:var(--green2);color:var(--green);font-weight:600}
+.lang{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 10px;font-size:13px}
+.hero{padding:34px 0 18px}
+.hero h1{font-size:clamp(28px,4.5vw,40px);line-height:1.1;margin:0 0 10px;font-weight:700;letter-spacing:-.01em;max-width:620px}
+.hero p{margin:0;color:var(--ink2);max-width:560px;font-size:17px}
+.search{display:flex;gap:8px;margin-top:18px;max-width:560px}
+.search input{flex:1;font:inherit;font-size:18px;padding:12px 14px;border:2px solid var(--ink);border-radius:12px;min-width:0}
+.search button{background:var(--green);color:#fff;border:0;border-radius:12px;padding:0 18px;font-weight:600;font-size:16px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.chips button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 11px;font-size:13px;color:var(--ink2)}
+.grid{display:grid;grid-template-columns:1fr;gap:14px;margin:18px 0 40px}
+@media(min-width:800px){.grid{grid-template-columns:1.2fr .8fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.card h2{font-size:18px;margin:0 0 6px}.card .sub{color:var(--mut);font-size:13px;margin:0 0 12px}
+.site{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.site:first-of-type{border-top:0}.site b{display:block}.site .m{color:var(--ink2);font-size:14px}.site .d{text-align:right;white-space:nowrap}
+.site .d strong{display:block;font-size:18px}.site .d small{color:var(--mut)}
+.site button{margin-top:6px;border:1px solid var(--green);color:var(--green);background:#fff;border-radius:8px;padding:5px 10px;font-size:13px;font-weight:600}
+.tag{display:inline-block;font-size:11px;padding:2px 7px;border-radius:6px;background:var(--blue2);color:var(--blue);margin-right:4px;vertical-align:middle}
+.tag.rural{background:#F1EFE6;color:#6B5E2E}.tag.mobile{background:var(--peach2);color:var(--peach)}
+label{display:block;font-size:14px;color:var(--ink2);margin:10px 0 4px}
+input[type=number],input[type=text],input[type=tel],select{width:100%;font:inherit;padding:10px 12px;border:1px solid #C9D0D8;border-radius:10px;background:#fff}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fee{margin-top:14px;padding:14px;border-radius:12px;background:var(--green2);color:var(--green)}
+.fee strong{font-size:28px;display:block;line-height:1.1}.fee span{font-size:14px;color:#2F5F47}
+.btn{background:var(--ink);color:#fff;border:0;border-radius:10px;padding:11px 16px;font-weight:600;width:100%;margin-top:12px}
+.btn.sec{background:#fff;color:var(--ink);border:1px solid var(--ink)}
+.steps{display:flex;gap:6px;margin-bottom:12px}.steps i{flex:1;height:5px;border-radius:3px;background:var(--line)}.steps i.on{background:var(--green)}
+.q{font-size:18px;font-weight:600;margin:4px 0 10px}
+.opts{display:grid;gap:8px}.opts button{text-align:left;border:1px solid #C9D0D8;background:#fff;border-radius:10px;padding:11px 12px}
+.opts button.on{border-color:var(--green);background:var(--green2)}
+.res{border-left:4px solid var(--line);padding:10px 12px;margin:8px 0;background:#fff;border-radius:0 10px 10px 0}
+.res.yes{border-color:var(--green)}.res.maybe{border-color:#C98A1B}.res.no{border-color:#D5DBE2;color:var(--mut)}
+.res b{display:block}.res small{color:var(--ink2)}
+.note{font-size:13px;color:var(--ink2);background:#fff;border:1px dashed #C9D0D8;border-radius:10px;padding:10px 12px;margin-top:12px}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:12px 16px;border-radius:12px;opacity:0;transition:.25s;max-width:92vw;font-size:15px;z-index:9}
+.toast.show{opacity:1;transform:translateX(-50%)}
+footer{color:var(--mut);font-size:13px;padding:20px 0 40px;border-top:1px solid var(--line)}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}@media(min-width:800px){.kpis{grid-template-columns:repeat(4,1fr)}}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px}.kpi .l{font-size:12px;color:var(--mut)}.kpi .v{font-size:26px;font-weight:700;letter-spacing:-.01em}.kpi .d{font-size:12px;color:var(--ink2)}
+.bars{margin-top:8px}.bar{display:grid;grid-template-columns:150px 1fr 70px;align-items:center;gap:10px;font-size:14px;padding:5px 0}
+.bar i{display:block;height:12px;border-radius:6px;background:var(--green)}.bar i.e{background:var(--peach)}.bar span{text-align:right;color:var(--ink2)}
+table{width:100%;border-collapse:collapse;font-size:14px}th{text-align:left;color:var(--mut);font-weight:600;font-size:12px;border-bottom:1px solid var(--line);padding:6px 4px}td{padding:7px 4px;border-bottom:1px solid #EEF1F4}td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.pill{font-size:11px;padding:2px 7px;border-radius:6px;background:var(--green2);color:var(--green)}.pill.w{background:#FBF3E0;color:#8A5A0B}
+.hid{display:none}
+.callout{background:var(--blue2);color:var(--blue);border-radius:12px;padding:12px 14px;font-size:14px;margin-top:12px}
+@media print{header,.tabs,.toast{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap top">
+  <div class="brand"><span class="pin"></span><div>Georgia Access Points<small>Care you can afford, near you</small></div></div>
+  <nav class="tabs"><button class="on" data-v="public">Find care</button><button data-v="state">State view</button></nav>
+  <button class="lang" id="lang">Español</button>
+</div></header>
+
+<main class="wrap">
+<section id="public">
+  <div class="hero">
+    <h1 id="h1">No insurance? You can still see a doctor this week.</h1>
+    <p id="h1p">Community health centers across Georgia see everyone, insured or not, and charge based on what you earn. Enter your ZIP code to find the closest one, see what a visit costs, and book.</p>
+    <form class="search" id="zipform"><input id="zip" inputmode="numeric" pattern="[0-9]*" maxlength="5" placeholder="ZIP code" aria-label="ZIP code" value="31201"><button type="submit">Find care</button></form>
+    <div class="chips"><button data-z="30310">Atlanta</button><button data-z="31201">Macon</button><button data-z="31401">Savannah</button><button data-z="31701">Albany</button><button data-z="30501">Gainesville</button><button data-z="39817">Bainbridge</button><button data-z="30720">Dalton</button></div>
+  </div>
+
+  <div class="grid">
+    <div>
+      <div class="card">
+        <h2>Health centers near <span id="near">31201</span></h2>
+        <p class="sub">Open to everyone. Sliding-fee pricing. Most have same-week appointments. <em>Sample site list for the demo.</em></p>
+        <div id="sites"></div>
+      </div>
+
+      <div class="card" style="margin-top:14px">
+        <h2>Three-minute check: what you qualify for</h2>
+        <p class="sub">Answer five questions. Nothing is sent anywhere in this demo.</p>
+        <div class="steps" id="steps"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+        <div id="screen"></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <h2>What a visit will cost</h2>
+        <p class="sub">Health centers use a sliding fee based on household size and income. This is an estimate; the center confirms at check-in.</p>
+        <div class="row">
+          <div><label>People in your household</label><input type="number" id="hh" min="1" max="12" value="2"></div>
+          <div><label>Monthly income (before taxes)</label><input type="number" id="inc" min="0" step="50" value="1800"></div>
+        </div>
+        <div class="fee" id="fee"></div>
+        <div class="note">Includes a primary-care visit. Labs, dental and behavioral health are on the same scale. Prescriptions through the center's 340B pharmacy are usually $4–$15.</div>
+      </div>
+
+      <div class="card" style="margin-top:14px" id="bookcard">
+        <h2>Book an appointment</h2>
+        <p class="sub" id="booksub">Pick a center from the list, or call the navigator line.</p>
+        <label>Center</label><select id="bsite"></select>
+        <div class="row"><div><label>Day</label><select id="bday"></select></div><div><label>Time</label><select id="btime"><option>8:30 AM</option><option>10:15 AM</option><option>1:00 PM</option><option>3:45 PM</option></select></div></div>
+        <label>Mobile number for a text reminder</label><input type="tel" id="bphone" placeholder="(optional)">
+        <label style="display:flex;gap:8px;align-items:flex-start;margin-top:10px"><input type="checkbox" id="optin" checked style="margin-top:4px"> <span style="font-size:14px;color:var(--ink2)">If Georgia expands Medicaid, add me to the day-one enrollment list so I'm covered as soon as it starts.</span></label>
+        <button class="btn" id="book">Book this visit</button>
+        <button class="btn sec" id="call">Call a navigator: 1-8XX-GA-POINT</button>
+        <div class="callout">Sent here from an emergency room? Enter the code on your discharge sheet and your first visit is already scheduled.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="state" class="hid">
+  <div class="hero" style="padding-bottom:8px">
+    <h1 style="font-size:30px">State view — the bridge, month 4</h1>
+    <p>What DCH and the Governor's office see monthly. Every number below is illustrative and generated for the demo; the live version reads GPCA enrollment, center visit data and hospital ED referral files.</p>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="l">Enrolled in a medical home</div><div class="v">31,840</div><div class="d">target 25,000 by day 90</div></div>
+    <div class="kpi"><div class="l">Visits delivered</div><div class="v">58,212</div><div class="d">1.8 per enrollee</div></div>
+    <div class="kpi"><div class="l">ED referrals completed</div><div class="v">9,417</div><div class="d">from 23 hospitals</div></div>
+    <div class="kpi"><div class="l">Uncompensated care avoided (est.)</div><div class="v">$21.6M</div><div class="d">at $1,400 per diverted visit + inpatient</div></div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h2>Enrollment by region</h2><p class="sub">Share of regional uninsured population reached. Rural regions lag; mobile units start in month 5.</p>
+      <div class="bars" id="regions"></div>
+    </div>
+    <div class="card">
+      <h2>Day-one expansion list</h2><p class="sub">People screened who would qualify under expansion and opted in.</p>
+      <div class="kpi" style="border:0;padding:0"><div class="v">24,905</div><div class="d">78% of enrollees; median household income 64% of poverty</div></div>
+      <table style="margin-top:10px"><thead><tr><th>Path today</th><th class="n">People</th></tr></thead><tbody>
+        <tr><td>Coverage gap (no option)</td><td class="n">14,110</td></tr>
+        <tr><td>Pathways-eligible, not enrolled</td><td class="n">6,380</td></tr>
+        <tr><td>Lost Georgia Access in 2026</td><td class="n">4,415</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+  <div class="card" style="margin-bottom:40px">
+    <h2>Counties without a site within 30 minutes</h2><p class="sub">The year-one fix for each, and status.</p>
+    <table><thead><tr><th>County</th><th>Newly uninsured (est.)</th><th>Fix</th><th>Status</th></tr></thead><tbody>
+      <tr><td>Clay</td><td>310</td><td>Mobile unit, Tuesdays</td><td><span class="pill">Live</span></td></tr>
+      <tr><td>Taliaferro</td><td>140</td><td>Co-locate at county health dept.</td><td><span class="pill w">Month 5</span></td></tr>
+      <tr><td>Echols</td><td>260</td><td>School-based site</td><td><span class="pill w">Month 6</span></td></tr>
+      <tr><td>Webster</td><td>190</td><td>Mobile unit, Thursdays</td><td><span class="pill">Live</span></td></tr>
+      <tr><td>Quitman</td><td>170</td><td>Mobile unit, Tuesdays</td><td><span class="pill">Live</span></td></tr>
+    </tbody></table>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">Georgia Access Points is a demonstration built by Cura Consulting Group for the Georgia's Promise transition. Site list, prices and state figures are sample data. Not affiliated with any state agency.</div></footer>
+<div class="toast" id="toast"></div>
+
+<script>
+// ---- sample data (public org names and cities; no addresses or phone numbers) ----
+const ZIPS={30310:[33.73,-84.42,'Atlanta'],31201:[32.84,-83.63,'Macon'],31401:[32.08,-81.09,'Savannah'],31701:[31.58,-84.16,'Albany'],30501:[34.30,-83.82,'Gainesville'],39817:[30.90,-84.58,'Bainbridge'],30720:[34.77,-84.97,'Dalton'],30901:[33.47,-81.97,'Augusta'],31601:[30.83,-83.28,'Valdosta'],31021:[32.54,-82.90,'Dublin'],30223:[33.25,-84.26,'Griffin'],31520:[31.15,-81.49,'Brunswick'],30907:[33.52,-82.08,'Augusta'],30044:[33.93,-84.07,'Lawrenceville'],31088:[32.61,-83.65,'Warner Robins'],30303:[33.75,-84.39,'Atlanta'],31750:[31.71,-83.25,'Fitzgerald'],30161:[34.26,-85.16,'Rome']};
+const SITES=[
+ ['Community Health Care Systems','Tennille',32.94,-82.81,['rural']],['Community Health Care Systems','Macon',32.85,-83.65,[]],['First Choice Primary Care','Macon',32.83,-83.64,[]],
+ ['Mercer Medicine Primary Care','Macon',32.84,-83.63,[]],['Primary Care of Southwest Georgia','Blakely',31.38,-84.93,['rural','mobile']],['Albany Area Primary Health Care','Albany',31.57,-84.17,[]],
+ ['Albany Area Primary Health Care','Sylvester',31.53,-83.83,['rural']],['Southwest Georgia Health Care','Cuthbert',31.77,-84.79,['rural']],['Curtis V. Cooper Primary Health Care','Savannah',32.07,-81.10,[]],
+ ['J.C. Lewis Primary Health Care Center','Savannah',32.05,-81.11,[]],['Diversity Health Center','Hinesville',31.85,-81.60,[]],['Coastal Community Health Services','Brunswick',31.16,-81.50,[]],
+ ['Southside Medical Center','Atlanta',33.73,-84.38,[]],['Mercy Care','Atlanta',33.76,-84.39,['mobile']],['Family Health Centers of Georgia','Atlanta',33.75,-84.42,[]],
+ ['Good Samaritan Health Center','Atlanta',33.78,-84.42,[]],['West End Medical Centers','Atlanta',33.74,-84.43,[]],['Center for Pan Asian Community Services (Cosmo Health)','Doraville',33.90,-84.28,[]],
+ ['Oakhurst Medical Centers','Stone Mountain',33.80,-84.17,[]],['Four Corners Primary Care','Norcross',33.94,-84.20,[]],['Medlink Georgia','Colbert',34.03,-83.21,['rural']],
+ ['Georgia Mountains Health Services','Dahlonega',34.53,-83.98,['rural']],['Georgia Highlands Medical Services','Cumming',34.21,-84.14,[]],['North Georgia Healthcare Center','Ringgold',34.92,-85.11,['rural']],
+ ['Christ Community Health Services Augusta','Augusta',33.47,-81.97,[]],['Medical Associates Plus','Augusta',33.46,-82.02,[]],['East Georgia Healthcare Center','Swainsboro',32.60,-82.33,['rural']],
+ ['South Central Primary Care Center','Ocilla',31.59,-83.25,['rural']],['Valley Healthcare System','Columbus',32.47,-84.99,[]],['Palmetto Health Council','Palmetto',33.52,-84.67,[]],
+ ['Southwest Georgia Health Care','Donalsonville',31.04,-84.88,['rural']],['Primary Care of Southwest Georgia','Bainbridge',30.90,-84.57,['rural']],['Neighborhood Improvement Project','Augusta',33.48,-81.98,[]],
+ ['Harbin Clinic Community Health','Rome',34.25,-85.17,[]],['Tri-County Health System','Warrenton',33.41,-82.66,['rural']],['McKinney Medical Center','Waycross',31.21,-82.35,['rural']],
+ ['Whitefoord','Atlanta',33.75,-84.33,[]],['Georgia Primary Care Mobile Unit','Thomasville',30.84,-83.98,['mobile','rural']],['Southside Medical Center','Riverdale',33.57,-84.41,[]],['Georgia Highlands Medical Services','Dalton',34.77,-84.97,[]]
+];
+const $=s=>document.querySelector(s);
+const toast=(m)=>{const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(t._x);t._x=setTimeout(()=>t.classList.remove('show'),3200)};
+const dist=(a,b,c,d)=>{const R=3959,p=Math.PI/180,dl=(c-a)*p,dn=(d-b)*p,h=Math.sin(dl/2)**2+Math.cos(a*p)*Math.cos(c*p)*Math.sin(dn/2)**2;return 2*R*Math.asin(Math.sqrt(h))};
+let CUR=[];
+function findZip(z){
+  let k=ZIPS[z];if(!k){const n=Object.keys(ZIPS).sort((x,y)=>Math.abs(x-z)-Math.abs(y-z))[0];k=ZIPS[n];toast(`Showing centers near ${k[2]} (closest area in the demo to ${z})`);}
+  $('#near').textContent=z+' · '+k[2];
+  CUR=SITES.map(s=>({name:s[0],city:s[1],tags:s[4],mi:dist(k[0],k[1],s[2],s[3])})).sort((a,b)=>a.mi-b.mi).slice(0,6);
+  $('#sites').innerHTML=CUR.map((s,i)=>`<div class="site"><div><b>${s.name}</b><div class="m">${s.city}${s.tags.map(t=>` <span class="tag ${t}">${t==='rural'?'Rural site':'Mobile unit'}</span>`).join('')}</div><div class="m">Next opening: ${['Tomorrow','Thu','Fri','Mon','Tue','Wed'][i]} · Primary care, dental, behavioral health</div></div><div class="d"><strong>${s.mi<1?'<1':Math.round(s.mi)}</strong><small>miles</small><br><button data-i="${i}">Book</button></div></div>`).join('');
+  $('#bsite').innerHTML=CUR.map((s,i)=>`<option value="${i}">${s.name} — ${s.city}</option>`).join('');
+  $('#sites').querySelectorAll('button').forEach(b=>b.onclick=()=>{$('#bsite').value=b.dataset.i;$('#bookcard').scrollIntoView({behavior:'smooth',block:'center'});toast('Center selected. Pick a day and time.')});
+}
+$('#zipform').onsubmit=e=>{e.preventDefault();findZip($('#zip').value.trim()||'31201')};
+document.querySelectorAll('.chips button').forEach(b=>b.onclick=()=>{$('#zip').value=b.dataset.z;findZip(b.dataset.z)});
+// days
+const dsel=$('#bday');for(let i=1;i<=7;i++){const d=new Date();d.setDate(d.getDate()+i);if(d.getDay()===0)continue;dsel.innerHTML+=`<option>${d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})}</option>`}
+$('#book').onclick=()=>{const s=CUR[$('#bsite').value];toast(`Booked: ${s.name}, ${$('#bday').value} at ${$('#btime').value}. ${$('#optin').checked?'You are on the day-one list.':''} (Demo: nothing was sent.)`)};
+$('#call').onclick=()=>toast('Navigator line: 7am–7pm, English and Spanish. In the demo this would place the call.');
+// ---- sliding fee (2026 poverty guidelines, approximate) ----
+const FPL=(hh)=>15650+5500*(hh-1);
+function fee(){const hh=+$('#hh').value||1,inc=(+$('#inc').value||0)*12,pct=inc/FPL(hh)*100;let tier,price,why;
+  if(pct<=100){tier='A';price='$25';why='at or below the poverty line: nominal fee'}else if(pct<=125){tier='B';price='$40';why='20% of the visit cost'}else if(pct<=150){tier='C';price='$60';why='40% of the visit cost'}else if(pct<=175){tier='D';price='$85';why='60% of the visit cost'}else if(pct<=200){tier='E';price='$110';why='80% of the visit cost'}else{tier='F';price='$150–$180';why='full fee; still less than urgent care, and a payment plan is available'}
+  $('#fee').innerHTML=`<strong>${price} <span style="font-size:15px;font-weight:400">per visit</span></strong><span>Your household is about ${Math.round(pct)}% of the federal poverty level · tier ${tier}: ${why}.</span>`}
+$('#hh').oninput=fee;$('#inc').oninput=fee;
+// ---- screener ----
+const Q=[
+ {k:'age',q:'How old are you?',o:['Under 19','19–64','65 or older']},
+ {k:'inc',q:'About how much does your household earn in a month?',o:['Under $1,300','$1,300–$2,600','$2,600–$5,000','More than $5,000']},
+ {k:'work',q:'Do you work, go to school, volunteer or train at least 80 hours a month?',o:['Yes','No','Not sure']},
+ {k:'fam',q:'Does any of this apply?',o:['I am pregnant','I have a child under 19 at home','I am a veteran','None of these']},
+ {k:'ins',q:'Did you have insurance in 2025?',o:['Yes, through Georgia Access (marketplace)','Yes, through a job','Yes, Medicaid or PeachCare','No']}
+];
+let step=0,ans={};
+function renderQ(){document.querySelectorAll('#steps i').forEach((i,n)=>i.classList.toggle('on',n<=step));
+  if(step>=Q.length)return result();
+  const q=Q[step];$('#screen').innerHTML=`<div class="q">${q.q}</div><div class="opts">${q.o.map(o=>`<button data-o="${o}">${o}</button>`).join('')}</div>${step?'<button class="btn sec" id="back" style="margin-top:10px">Back</button>':''}`;
+  $('#screen').querySelectorAll('.opts button').forEach(b=>b.onclick=()=>{ans[q.k]=b.dataset.o;step++;renderQ()});const bk=$('#back');if(bk)bk.onclick=()=>{step--;renderQ()}}
+function result(){const lowInc=ans.inc==='Under $1,300',mid=ans.inc==='$1,300–$2,600',adult=ans.age==='19–64',kid=ans.age==='Under 19',senior=ans.age==='65 or older';
+  const R=[];
+  R.push({c:'yes',t:'Georgia Access Points medical home',d:'Yes, today. Book a visit at any center on the sliding scale. You do not need to qualify for anything else first.'});
+  if(kid||ans.fam==='I am pregnant')R.push({c:'yes',t:'Medicaid or PeachCare for Kids',d:'Likely eligible now. A navigator can file the application with you at your first visit.'});
+  if(adult&&lowInc)R.push({c:ans.work==='Yes'?'yes':'maybe',t:'Georgia Pathways',d:ans.work==='Yes'?'You appear to meet the income and 80-hour rules. Enrollment takes 30–45 days; the center sees you in the meantime.':'Income fits, but Pathways requires 80 hours a month of work, school or service, reported monthly. A navigator can walk through what counts.'});
+  if(adult&&lowInc&&ans.work!=='Yes')R.push({c:'maybe',t:'Coverage gap',d:'Below the poverty line but not in Pathways means no subsidized insurance exists for you today. You go on the day-one list for Medicaid expansion, and the medical home covers you until then.'});
+  if(adult&&(mid||ans.inc==='$2,600–$5,000'))R.push({c:'maybe',t:'Georgia Access (marketplace)',d:'You may qualify for a subsidized plan. Premiums rose for 2027 after the enhanced subsidies ended; a navigator can compare the cost against the sliding fee.'});
+  if(ans.fam==='I am a veteran')R.push({c:'maybe',t:'VA health care',d:'Enrollment may be available; the center can refer you to the nearest VA enrollment office.'});
+  if(senior)R.push({c:'yes',t:'Medicare',d:'You should be enrolled or eligible. The center accepts Medicare and can help with Part D and Extra Help.'});
+  R.push({c:'maybe',t:'Hospital financial assistance',d:'If you had an ER or hospital bill in the last year, nonprofit hospitals must screen you for charity care. Bring the bill to your first visit.'});
+  const dayone=adult&&(lowInc||mid);
+  $('#screen').innerHTML=R.map(r=>`<div class="res ${r.c}"><b>${r.t}</b><small>${r.d}</small></div>`).join('')+(dayone?`<div class="callout">Based on your answers you would likely qualify under Medicaid expansion. When you book, leave the day-one box checked and you will be enrolled the day it starts.</div>`:'')+`<button class="btn sec" id="again" style="margin-top:12px">Start over</button>`;
+  $('#again').onclick=()=>{step=0;ans={};renderQ()};
+  $('#booksub').textContent='Your check is done. Pick a center and a time.';
+}
+// ---- tabs / language ----
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));$('#public').classList.toggle('hid',b.dataset.v!=='public');$('#state').classList.toggle('hid',b.dataset.v!=='state');window.scrollTo({top:0})});
+let es=false;$('#lang').onclick=()=>{es=!es;$('#lang').textContent=es?'English':'Español';$('#h1').textContent=es?'¿Sin seguro? Aún puede ver a un médico esta semana.':'No insurance? You can still see a doctor this week.';$('#h1p').textContent=es?'Los centros de salud comunitarios de Georgia atienden a todos, con o sin seguro, y cobran según sus ingresos. Escriba su código postal para encontrar el más cercano, ver cuánto cuesta una visita y reservar.':'Community health centers across Georgia see everyone, insured or not, and charge based on what you earn. Enter your ZIP code to find the closest one, see what a visit costs, and book.';toast(es?'Demostración: solo el encabezado está traducido.':'Demo: only the header is translated.')};
+// ---- state view bars ----
+const REG=[['Metro Atlanta',38,41],['Augusta / CSRA',31,29],['Macon / Central',27,26],['Savannah / Coast',24,22],['Columbus / West',19,18],['Albany / Southwest',14,21],['Valdosta / South',12,19],['North Georgia',16,15]];
+$('#regions').innerHTML=REG.map(r=>`<div class="bar"><div>${r[0]}</div><div><i style="width:${r[1]*2.2}%"></i></div><span>${r[1]}%</span></div>`).join('')+`<div class="bar" style="margin-top:6px;color:var(--mut);font-size:12px"><div></div><div>share of estimated uninsured enrolled</div><div></div></div>`;
+// init
+findZip('31201');fee();renderQ();
+</script>
+</body>
+</html>
